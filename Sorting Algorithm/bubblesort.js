@@ -16,12 +16,14 @@ let bubblesort = (arr) => {
 
 // Randomize array function
 let randoms = (n) => {
-    let random = [...Array(n)].map(() => Math.floor(Math.random() * (n * 5)));
+    let random = [...Array(n)].map(() => Math.floor(Math.random() * (n + 5)));
 
     return random;
 }
 
-const randomArr = randoms(20);
+const randomArr = randoms(10);
+
+console.log("------------------Bubble Sort-----------------");
 console.log("Unsorted array: ");
 console.log(randomArr.join(' ') + "\n");
 

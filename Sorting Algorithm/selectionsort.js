@@ -29,6 +29,7 @@ let randomize = (n) => {
 
 const randomArr = randomize(10);
 
+console.log("-----------------Selection Sort-------------");
 console.log("Unsorted array: ");
 console.log(randomArr.join(' ') + "\n");
 
