@@ -16,7 +16,7 @@ let selectionSort = (arr) => {
             }
         }
         swap(i, min);
-    }
+    };
     return arr;
 } 
 
@@ -27,11 +27,18 @@ let randomize = (n) => {
     return random;
 }
 
-const randomArr = randomize(10);
+const randomArr = randomize(1000);
 
 console.log("-----------------Selection Sort-------------");
 console.log("Unsorted array: ");
 console.log(randomArr.join(' ') + "\n");
 
+const start = new Date().getTime();
+
 console.log("Sorted array: ");
 console.log(selectionSort(randomArr).join(' '));
+
+const stop = new Date().getTime();
+const elapsed = stop - start;
+
+console.log("Time: " + elapsed  + " milisecond");

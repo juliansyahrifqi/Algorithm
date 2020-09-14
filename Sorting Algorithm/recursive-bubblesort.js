@@ -19,10 +19,17 @@ let randomize = (n) => {
     return random;
 }
 
-const randomArr = randomize(10);
+const randomArr = randomize(1000);
 console.log("------------Recursive Bubble Sort------------");
 console.log("Unsorted array: ");
 console.log(randomArr.join(' ') + "\n");
 
+const start = new Date().getTime();
+
 console.log("Sorted array: ");
 console.log(recursiveBubble(randomArr).join(' '));
+
+const stop = new Date().getTime();
+const elapsed = stop - start;
+
+console.log("Time: " + elapsed + " milisecond");

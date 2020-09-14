@@ -21,12 +21,18 @@ let randoms = (n) => {
     return random;
 }
 
-const randomArr = randoms(10);
+const randomArr = randoms(1000);
 
 console.log("------------------Bubble Sort-----------------");
 console.log("Unsorted array: ");
 console.log(randomArr.join(' ') + "\n");
 
+const start = new Date().getTime();
+
 console.log("Sorted array: ");
 console.log(bubblesort(randomArr).join(' '));
 
+const stop = new Date().getTime();
+const elapsed = stop - start;
+
+console.log("Time: " + elapsed + " milisecond");

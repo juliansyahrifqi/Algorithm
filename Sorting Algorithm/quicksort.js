@@ -33,11 +33,18 @@ let randomize = (n) => {
     return random;
 }
 
-const randomArr = randomize(10);
+const randomArr = randomize(1000);
 
 console.log("Unsorted: ");
 console.log(randomArr.join(' ') + "\n");
 quicksort(randomArr, 0, randomArr.length -1);
 
+const start = new Date().getTime();
+
 console.log("Sorted: ");
 console.log(randomArr.join(' '));
+
+const stop = new Date().getTime();
+const elapsed = stop - start;
+
+console.log("Time: " + elapsed + " milisecond");

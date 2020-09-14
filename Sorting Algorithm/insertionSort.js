@@ -20,11 +20,18 @@ let randomize = (n) => {
     return random;
 }   
 
-const randomArr = randomize(10);
+const randomArr = randomize(1000);
 
 console.log("-------------Insertion Sort----------------");
 console.log("Unsorted array: ");
 console.log(randomArr.join(' ') + "\n");
 
+const start = new Date().getTime();
+
 console.log("Sorted array: ");
 console.log(insertionSort(randomArr).join(' '));
+
+const stop = new Date().getTime();
+const elapsed = stop - start;
+
+console.log("Time: " + elapsed + " milisecond");
