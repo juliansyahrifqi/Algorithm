@@ -1,6 +1,6 @@
-function quicksort(data, start, end) {
-	function partisi(data, start, end) {
-		function swap(x, y) {
+let quicksort = (data, start, end) => {
+	let partisi = (data, start, end) => {
+		let swap = (x, y) => {
 			const temp = data[y];
 			data[y] = data[x];
 			data[x] = temp;
@@ -19,11 +19,12 @@ function quicksort(data, start, end) {
 		return center;
 	}
 
-	if(start >= end) return;
+	if(start >= end) return data;
 
 	const center = partisi(data, start, end);
-	quicksort(data, start, center - 1);
-	quicksort(data, center + 1, end);
+    quicksort(data, start, center - 1);
+	
+    return quicksort(data, center + 1, end);
 }
 
 // Randomize array function
@@ -35,16 +36,20 @@ let randomize = (n) => {
 
 const randomArr = randomize(1000);
 
-console.log("Unsorted: ");
+console.log("----------------Quick Sort---------------");
+console.log("Unsorted array: ");
 console.log(randomArr.join(' ') + "\n");
-quicksort(randomArr, 0, randomArr.length -1);
 
+// Start sorting time
 const start = new Date().getTime();
 
-console.log("Sorted: ");
-console.log(randomArr.join(' '));
+console.log("Sorted array: ");
+console.log(quicksort(randomArr, 0, randomArr.length - 1).join(' '));
 
+// Stop sorting time
 const stop = new Date().getTime();
+
+// Elapsed sorting time
 const elapsed = stop - start;
 
 console.log("Time: " + elapsed + " milisecond");
